@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Lesson_3 {
 
     public static void main(String[] argc) {
@@ -10,6 +12,11 @@ public class Lesson_3 {
         method7();
         method8();
         method9();
+        method10();
+        method11();
+        method12();
+        method13();
+        method14(7,2);
     }
 
     public static void printThreeWords() {
@@ -87,6 +94,7 @@ public class Lesson_3 {
         String str = "Строка";
         System.out.println(str.repeat(a));
     }
+
     public static void method9() {
         int a = 800;
         int b = a % 100;
@@ -97,5 +105,51 @@ public class Lesson_3 {
         if (b == 0) {
             System.out.println(false);
         }
+    }
+
+    public static void method10() {
+        int[] nums = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < 10; i++) {
+            if (nums[i] == 0) {
+                nums[i] = 1;
+            } else nums[i] = 0;
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static void method11() {
+        int[] nums = new int[100];
+        for (int i = 0; i < 100; i++) {
+            nums[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static void method12() {
+        int[] nums = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < 12; i++) {
+            if (nums[i] < 6)
+                nums[i] *= 2;
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static void method13() {
+        int[][] nums = new int[7][7];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[i].length; j++) {
+                if (i == j || i + j == nums.length - 1) {
+                    nums[i][j] = 1;
+                }
+            }
+            System.out.println(Arrays.deepToString(nums));
+        }
+    }
+    public static void method14(int len, int initialValue) {
+        int[] nums = new int[len];
+        for (int i = 0; i < len; i++) {
+            nums[i] = initialValue;
+        }
+        System.out.println(Arrays.toString(nums));
     }
 }
